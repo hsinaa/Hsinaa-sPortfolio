@@ -1,0 +1,67 @@
+// ─────────────────────────────────────────────────────────────
+//  src/data/skills.js
+//
+//  ✏️  ADD / REMOVE / EDIT skill categories and skills.
+//      Each object = one card in the dark Skills section.
+// ─────────────────────────────────────────────────────────────
+
+export const skillGroups = [
+  {
+    id:     "cybersecurity",
+    icon:   "🛡️",
+    label:  "Cybersecurity",
+    skills: [
+      "Ethical Hacking",
+      "SIEM",
+      "Threat Detection",
+      "PKI",
+      "Incident Response",
+      "Digital Forensics",
+    ],
+  },
+  {
+    id:     "cloud-devops",
+    icon:   "☁️",
+    label:  "Cloud & DevOps",
+    skills: [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "Ansible",
+      "Jenkins",
+      "GitHub",
+      "ArgoCD",
+    ],
+  },
+  {
+    id:     "programming",
+    icon:   "💻",
+    label:  "Programming",
+    skills: [
+      "Python",
+      "Bash",
+      "Java",
+      "C / C++",
+    ],
+  },
+  {
+    id:     "monitoring",
+    icon:   "📊",
+    label:  "Monitoring",
+    skills: [
+      "Wazuh",
+      "Prometheus",
+      "Grafana",
+      "Loki",
+    ],
+  },
+
+  // ── To add a category ──
+  // {
+  //   id:     "your-category",
+  //   icon:   "🔧",
+  //   label:  "Category Name",
+  //   skills: ["Skill 1", "Skill 2"],
+  // },
+];

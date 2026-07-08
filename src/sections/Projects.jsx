@@ -1,0 +1,109 @@
+// ─────────────────────────────────────────────────────────────
+//  src/sections/Projects.jsx
+// ─────────────────────────────────────────────────────────────
+import { useState } from "react";
+import { COLORS, gradient } from "../styles/tokens.js";
+import { SectionLabel, SectionTitle, Tag } from "../components/ui.jsx";
+import ProjectModal from "../components/ProjectModal.jsx";
+import { projects } from "../data/projects.js";
+
+export default function Projects() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  return (
+    <section id="projects" style={{ padding: "96px clamp(20px,5vw,80px)", background: COLORS.bgSoft }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <SectionLabel>Projects</SectionLabel>
+        <SectionTitle>Selected Work</SectionTitle>
+        <p style={{ color: COLORS.textMuted, fontSize: 15, marginTop: 12, marginBottom: 48, maxWidth: 520, lineHeight: 1.7 }}>
+          End-to-end cybersecurity and cloud engineering projects — from honeypot infrastructure to full SIEM deployments.
+        </p>
+
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          gap: 24,
+        }}>
+          {projects.map((project, i) => (
+            <ProjectCard
+              key={i}
+              project={project}
+              index={i}
+              onOpen={() => setActiveIndex(i)}
+            />
+          ))}
+        </div>
+      </div>
+
+      {activeIndex !== null && (
+        <ProjectModal
+          project={projects[activeIndex]}
+          index={activeIndex}
+          onClose={() => setActiveIndex(null)}
+        />
+      )}
+    </section>
+  );
+}
+
+function ProjectCard({ project, index, onOpen }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: COLORS.bg,
+        borderRadius: 20,
+        border: `1px solid ${COLORS.border}`,
+        padding: "28px 28px 24px",
+        display: "flex", flexDirection: "column",
+        transition: "box-shadow 0.25s, transform 0.25s",
+        boxShadow: hovered ? "0 8px 36px rgba(99,102,241,0.16)" : "0 2px 12px rgba(99,102,241,0.06)",
+        transform: hovered ? "translateY(-3px)" : "none",
+      }}
+    >
+      {/* Number badge */}
+      <div style={{
+        display: "inline-flex", alignItems: "center", justifyContent: "center",
+        width: 36, height: 36, borderRadius: 10,
+        background: gradient,
+        color: "#fff", fontWeight: 800, fontSize: 13,
+        marginBottom: 18,
+      }}>
+        {String(index + 1).padStart(2, "0")}
+      </div>
+
+      <h3 style={{ fontWeight: 800, fontSize: 15, color: COLORS.text, lineHeight: 1.4, marginBottom: 10 }}>
+        {project.title}
+      </h3>
+
+      <p style={{ color: COLORS.textMuted, fontSize: 13, lineHeight: 1.7, flex: 1, marginBottom: 18 }}>
+        {project.short}
+      </p>
+
+      {/* First 4 tools + overflow count */}
+      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
+        {project.tools.slice(0, 4).map((t) => <Tag key={t} label={t} small />)}
+        {project.tools.length > 4 && <Tag label={`+${project.tools.length - 4}`} small />}
+      </div>
+
+      <button
+        onClick={onOpen}
+        style={{
+          background: hovered ? COLORS.primary : "none",
+          border: `1.5px solid ${COLORS.primary}`,
+          borderRadius: 999, padding: "8px 20px",
+          fontSize: 13, fontWeight: 700,
+          color: hovered ? "#fff" : COLORS.primary,
+          cursor: "pointer", alignSelf: "flex-start",
+          transition: "all 0.2s",
+          fontFamily: "inherit",
+        }}
+      >
+        View Details →
+      </button>
+    </div>
+  );
+}
