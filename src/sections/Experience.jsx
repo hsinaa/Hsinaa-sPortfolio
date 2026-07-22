@@ -5,14 +5,15 @@
 import { COLORS } from "../styles/tokens.js";
 import { SectionLabel, SectionTitle, Tag } from "../components/ui.jsx";
 import TimelineItem, { Timeline } from "../components/TimelineItem.jsx";
-import { experience } from "../data/experience.js";
+import { useLanguage } from "../i18n.jsx";
 
 export default function Experience() {
+  const { experience, t } = useLanguage();
   return (
     <section id="experience" style={{ padding: "96px clamp(20px,5vw,80px)", background: COLORS.bg }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
-        <SectionLabel>Experience</SectionLabel>
-        <SectionTitle>Professional Journey</SectionTitle>
+        <SectionLabel>{t.experienceLabel}</SectionLabel>
+        <SectionTitle>{t.experienceTitle}</SectionTitle>
 
         <div style={{ marginTop: 48 }}>
           <Timeline>

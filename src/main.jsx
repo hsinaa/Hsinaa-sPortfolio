@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { FONTS } from "./styles/tokens.js";
 import App from "./App.jsx";
+import { LanguageProvider } from "./i18n.jsx";
 
 // Global reset — applied once at the root
 const globalStyle = document.createElement("style");
@@ -14,6 +15,6 @@ document.head.appendChild(globalStyle);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <LanguageProvider><App /></LanguageProvider>
   </StrictMode>
 );

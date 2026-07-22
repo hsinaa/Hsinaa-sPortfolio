@@ -4,9 +4,10 @@
 
 import { COLORS } from "../styles/tokens.js";
 import { SectionLabel, SectionTitle } from "../components/ui.jsx";
-import { skillGroups } from "../data/skills.js";
+import { useLanguage } from "../i18n.jsx";
 
 export default function Skills() {
+  const { skillGroups, t } = useLanguage();
   return (
     <section
       id="skills"
@@ -16,13 +17,13 @@ export default function Skills() {
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <SectionLabel light>Skills</SectionLabel>
-        <SectionTitle light>Technical Expertise</SectionTitle>
+        <SectionLabel light>{t.skillsLabel}</SectionLabel>
+        <SectionTitle light>{t.skillsTitle}</SectionTitle>
         <p style={{
           color: "rgba(255,255,255,0.55)", fontSize: 15,
           marginTop: 12, marginBottom: 52, lineHeight: 1.7,
         }}>
-          A snapshot of the tools and technologies I work with across security, cloud, and automation.
+          {t.skillsIntro}
         </p>
 
         <div style={{

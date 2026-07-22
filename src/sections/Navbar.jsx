@@ -5,10 +5,10 @@
 import { useState, useEffect } from "react";
 import { COLORS } from "../styles/tokens.js";
 import { Button } from "../components/ui.jsx";
-import { navLinks } from "../data/navigation.js";
-import { personal } from "../data/personal.js";
+import { useLanguage } from "../i18n.jsx";
 
 export default function Navbar() {
+  const { navLinks, personal, language, setLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open,     setOpen]     = useState(false);
 
@@ -65,7 +65,7 @@ export default function Navbar() {
               {l.label}
             </button>
           ))}
-          <Button href={personal.cvPath}>↓ Download CV</Button>
+          <Button onClick={() => setLanguage(language === "en" ? "fr" : "en")}>Eng/Fr</Button>
         </div>
 
         {/* Mobile hamburger */}
@@ -104,7 +104,7 @@ export default function Navbar() {
             </button>
           ))}
           <div style={{ marginTop: 8 }}>
-            <Button href={personal.cvPath}>↓ Download CV</Button>
+            <Button onClick={() => setLanguage(language === "en" ? "fr" : "en")}>Eng/Fr</Button>
           </div>
         </div>
       )}

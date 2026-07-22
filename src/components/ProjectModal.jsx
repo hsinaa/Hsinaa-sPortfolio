@@ -11,8 +11,10 @@
 import { useEffect } from "react";
 import { COLORS, gradient } from "../styles/tokens.js";
 import { Tag } from "./ui.jsx";
+import { useLanguage } from "../i18n.jsx";
 
 export default function ProjectModal({ project, index, onClose }) {
+  const { t } = useLanguage();
   // Close on Escape key; lock body scroll while open
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
@@ -57,7 +59,7 @@ export default function ProjectModal({ project, index, onClose }) {
             borderRadius: 14, padding: "8px 16px",
             fontSize: 12, fontWeight: 700, color: "#fff", letterSpacing: "0.08em",
           }}>
-            Project {String(index + 1).padStart(2, "0")}
+            {t.project} {String(index + 1).padStart(2, "0")}
           </div>
           <button
             onClick={onClose}
@@ -104,9 +106,9 @@ export default function ProjectModal({ project, index, onClose }) {
         {/* Content blocks — full / challenges / results are arrays of
             key-point strings, rendered as bullet lists */}
         {[
-          { heading: "Overview",    points: project.full       },
-          { heading: "Challenges",  points: project.challenges },
-          { heading: "Results",     points: project.results    },
+          { heading: t.overview,    points: project.full       },
+          { heading: t.challenges,  points: project.challenges },
+          { heading: t.results,     points: project.results    },
         ].map(({ heading, points }) => (
           <div key={heading} style={{ marginBottom: 20 }}>
             <div style={{
@@ -129,7 +131,7 @@ export default function ProjectModal({ project, index, onClose }) {
             fontWeight: 700, fontSize: 13, color: COLORS.accent,
             textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10,
           }}>
-            Technologies
+            {t.technologies}
           </div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {project.tools.map((t) => <Tag key={t} label={t} />)}

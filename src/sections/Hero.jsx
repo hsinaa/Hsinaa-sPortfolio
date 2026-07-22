@@ -5,9 +5,10 @@
 import { COLORS } from "../styles/tokens.js";
 import { Button, Tag } from "../components/ui.jsx";
 import MeshCanvas from "../components/MeshCanvas.jsx";
-import { personal } from "../data/personal.js";
+import { useLanguage } from "../i18n.jsx";
 
 export default function Hero() {
+  const { personal, t } = useLanguage();
   const scrollToContact = () =>
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 
@@ -103,8 +104,8 @@ export default function Hero() {
 
           {/* CTAs */}
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <Button href={personal.cvPath}>↓ Download CV</Button>
-            <Button outline onClick={scrollToContact}>Contact Me →</Button>
+            <Button href={personal.cvPath}>{t.downloadCv}</Button>
+            <Button outline onClick={scrollToContact}>{t.contactMe}</Button>
           </div>
 
           {/* Floating tech tags */}

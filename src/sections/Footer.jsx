@@ -3,9 +3,10 @@
 // ─────────────────────────────────────────────────────────────
 
 import { COLORS } from "../styles/tokens.js";
-import { personal } from "../data/personal.js";
+import { useLanguage } from "../i18n.jsx";
 
 export default function Footer() {
+  const { personal } = useLanguage();
   const year = new Date().getFullYear();
   return (
     <footer style={{ background: COLORS.text, padding: "32px clamp(20px,5vw,80px)", textAlign: "center" }}>

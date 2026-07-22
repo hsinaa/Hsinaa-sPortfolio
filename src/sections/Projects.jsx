@@ -5,18 +5,19 @@ import { useState } from "react";
 import { COLORS, gradient } from "../styles/tokens.js";
 import { SectionLabel, SectionTitle, Tag } from "../components/ui.jsx";
 import ProjectModal from "../components/ProjectModal.jsx";
-import { projects } from "../data/projects.js";
+import { useLanguage } from "../i18n.jsx";
 
 export default function Projects() {
+  const { projects, t } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
     <section id="projects" style={{ padding: "96px clamp(20px,5vw,80px)", background: COLORS.bgSoft }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <SectionLabel>Projects</SectionLabel>
-        <SectionTitle>Selected Work</SectionTitle>
+        <SectionLabel>{t.projectsLabel}</SectionLabel>
+        <SectionTitle>{t.projectsTitle}</SectionTitle>
         <p style={{ color: COLORS.textMuted, fontSize: 15, marginTop: 12, marginBottom: 48, maxWidth: 520, lineHeight: 1.7 }}>
-          End-to-end cybersecurity and cloud engineering projects — from honeypot infrastructure to full SIEM deployments.
+          {t.projectsIntro}
         </p>
 
         <div style={{
@@ -30,6 +31,7 @@ export default function Projects() {
               project={project}
               index={i}
               onOpen={() => setActiveIndex(i)}
+              t={t}
             />
           ))}
         </div>
@@ -46,7 +48,7 @@ export default function Projects() {
   );
 }
 
-function ProjectCard({ project, index, onOpen }) {
+function ProjectCard({ project, index, onOpen, t }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -102,7 +104,7 @@ function ProjectCard({ project, index, onOpen }) {
           fontFamily: "inherit",
         }}
       >
-        View Details →
+        {t.viewDetails}
       </button>
     </div>
   );

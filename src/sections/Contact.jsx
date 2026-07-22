@@ -5,7 +5,7 @@
 import { useState } from "react";
 import { COLORS } from "../styles/tokens.js";
 import { SectionLabel, SectionTitle, Button } from "../components/ui.jsx";
-import { personal } from "../data/personal.js";
+import { useLanguage } from "../i18n.jsx";
 
 // ✏️  Edit these link rows to change icons, labels, or order
 const contactLinks = (c) => [
@@ -25,6 +25,7 @@ const inputStyle = (focus, COLORS) => ({
 });
 
 export default function Contact() {
+  const { personal, t } = useLanguage();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [focus, setFocus] = useState({});
   const [sent,  setSent]  = useState(false);
@@ -35,15 +36,15 @@ export default function Contact() {
     setSent(true);
   };
 
-  const links = contactLinks(personal.contact);
+  const links = contactLinks(personal.contact).map((link) => link.label === "Phone" ? { ...link, label: t.phone } : link);
 
   return (
     <section id="contact" style={{ padding: "96px clamp(20px,5vw,80px)", background: COLORS.bgSoft }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <SectionLabel>Contact</SectionLabel>
-        <SectionTitle>Let's Connect</SectionTitle>
+        <SectionLabel>{t.contactLabel}</SectionLabel>
+        <SectionTitle>{t.contactTitle}</SectionTitle>
         <p style={{ color: COLORS.textMuted, fontSize: 15, marginTop: 12, marginBottom: 56, lineHeight: 1.7 }}>
-          Open to cybersecurity, cloud security, and DevSecOps roles. Reach out anytime.
+          {t.contactIntro}
         </p>
 
         <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60 }}>
@@ -94,17 +95,17 @@ export default function Contact() {
               <div style={{ textAlign: "center", padding: "40px 0" }}>
                 <div style={{ fontSize: 48, marginBottom: 16 }}>✨</div>
                 <div style={{ fontWeight: 800, fontSize: 18, color: COLORS.text, marginBottom: 8 }}>
-                  Message received!
+                  {t.messageReceived}
                 </div>
                 <div style={{ color: COLORS.textMuted, fontSize: 14 }}>
-                  I'll get back to you as soon as possible.
+                  {t.response}
                 </div>
               </div>
             ) : (
               <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
                 {[
-                  { name: "name",    label: "NAME",    type: "text",  placeholder: "Your name"       },
-                  { name: "email",   label: "EMAIL",   type: "email", placeholder: "your@email.com"  },
+                  { name: "name",    label: t.name,    type: "text",  placeholder: t.yourName       },
+                  { name: "email",   label: t.email,   type: "email", placeholder: "your@email.com"  },
                 ].map((f) => (
                   <div key={f.name}>
                     <label style={{
@@ -130,20 +131,20 @@ export default function Contact() {
                     fontSize: 12, fontWeight: 700, color: COLORS.textMid,
                     letterSpacing: "0.06em", display: "block", marginBottom: 6,
                   }}>
-                    MESSAGE
+                    {t.message}
                   </label>
                   <textarea
                     name="message"
                     rows={5}
                     value={form.message}
-                    placeholder="Your message..."
+                    placeholder={t.yourMessage}
                     onChange={handle}
                     onFocus={() => setFocus({ ...focus, message: true  })}
                     onBlur={()  => setFocus({ ...focus, message: false })}
                     style={{ ...inputStyle(focus.message, COLORS), resize: "vertical" }}
                   />
                 </div>
-                <Button onClick={submit}>Send Message →</Button>
+                <Button onClick={submit}>{t.sendMessage}</Button>
               </div>
             )}
           </div>

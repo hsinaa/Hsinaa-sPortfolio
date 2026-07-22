@@ -5,14 +5,15 @@
 import { COLORS } from "../styles/tokens.js";
 import { SectionLabel, SectionTitle, Tag } from "../components/ui.jsx";
 import TimelineItem, { Timeline } from "../components/TimelineItem.jsx";
-import { education } from "../data/education.js";
+import { useLanguage } from "../i18n.jsx";
 
 export default function Education() {
+  const { education, t } = useLanguage();
   return (
     <section id="education" style={{ padding: "96px clamp(20px,5vw,80px)", background: COLORS.bgSoft }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
-        <SectionLabel>Education</SectionLabel>
-        <SectionTitle>Academic Background</SectionTitle>
+        <SectionLabel>{t.educationLabel}</SectionLabel>
+        <SectionTitle>{t.educationTitle}</SectionTitle>
 
         <div style={{ marginTop: 48 }}>
           <Timeline>

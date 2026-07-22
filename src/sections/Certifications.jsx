@@ -6,13 +6,15 @@ import { useState } from "react";
 import { COLORS } from "../styles/tokens.js";
 import { SectionLabel, SectionTitle, Tag, Button } from "../components/ui.jsx";
 import { certifications } from "../data/certifications.js";
+import { useLanguage } from "../i18n.jsx";
 
 export default function Certifications() {
+  const { t } = useLanguage();
   return (
     <section id="certifications" style={{ padding: "96px clamp(20px,5vw,80px)", background: COLORS.bg }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <SectionLabel>Certifications</SectionLabel>
-        <SectionTitle>Credentials & Learning</SectionTitle>
+        <SectionLabel>{t.certificationsLabel}</SectionLabel>
+        <SectionTitle>{t.certificationsTitle}</SectionTitle>
 
         <div style={{
           display: "grid",
@@ -21,7 +23,7 @@ export default function Certifications() {
           marginTop: 48,
         }}>
           {certifications.map((cert) => (
-            <CertCard key={cert.id} cert={cert} />
+            <CertCard key={cert.id} cert={cert} t={t} />
           ))}
         </div>
       </div>
@@ -29,7 +31,7 @@ export default function Certifications() {
   );
 }
 
-function CertCard({ cert }) {
+function CertCard({ cert, t }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -67,7 +69,7 @@ function CertCard({ cert }) {
 
       {cert.url && (
         <div style={{ marginTop: 14 }}>
-          <Button href={cert.url} small outline>View credential ↗</Button>
+          <Button href={cert.url} small outline>{t.credential}</Button>
         </div>
       )}
     </div>

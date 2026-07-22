@@ -4,9 +4,10 @@
 
 import { COLORS } from "../styles/tokens.js";
 import { SectionLabel, SectionTitle, Button } from "../components/ui.jsx";
-import { personal } from "../data/personal.js";
+import { useLanguage } from "../i18n.jsx";
 
 export default function About() {
+  const { personal, t } = useLanguage();
   return (
     <section id="about" style={{ padding: "96px clamp(20px,5vw,80px)", background: COLORS.bg }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -14,8 +15,8 @@ export default function About() {
 
           {/* Left — text */}
           <div>
-            <SectionLabel>About Me</SectionLabel>
-            <SectionTitle>Securing the digital frontier, one layer at a time.</SectionTitle>
+            <SectionLabel>{t.aboutLabel}</SectionLabel>
+            <SectionTitle>{t.aboutTitle}</SectionTitle>
 
             <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 16 }}>
               {personal.bio.map((paragraph, i) => (
@@ -26,10 +27,10 @@ export default function About() {
             </div>
 
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 32 }}>
-              <Button href={personal.cvPath}>↓ Download CV</Button>
+              <Button href={personal.cvPath}>{t.downloadCv}</Button>
               <Button outline href={personal.contact.medium}>Medium ↗</Button>
               <Button outline onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-                Contact
+                {t.contact}
               </Button>
             </div>
           </div>
