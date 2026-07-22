@@ -35,7 +35,7 @@ export const personal = {
   status: "Open to opportunities",
 
   // Path to your CV file — place it in /public/cv.pdf
-  cvPath: "/AMANSAG_Hasnae_CV_9_7.pdf",
+  cvPath: "/AMANSAG_Hasnae_CV_22_7.pdf",
 
   contact: {
     email:    "amansag.hasnae@gmail.com",
