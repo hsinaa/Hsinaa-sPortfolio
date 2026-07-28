@@ -9,8 +9,7 @@ export const personal = {
   name:       "Hasnae Amansag",
   initials:   "hsinaa",
 
-  title:      "Cybersecurity Engineer",
-  subtitle:   "Cloud & DevSecOps Enthusiast",
+  title:      "Cloud & DevSecOps Engineer with a Cyber Security background",
 
   tagline:    "Building secure cloud infrastructures, automating deployments, and exploring modern cybersecurity solutions.",
 
