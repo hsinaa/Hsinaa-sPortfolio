@@ -18,8 +18,8 @@ export default function TimelineItem({ children, isLast }) {
         top: 24,
         width: 22,
         height: 22,
-        borderRadius: "50%",
-        background: `linear-gradient(135deg, ${COLORS.gradA}, ${COLORS.gradB})`,
+        borderRadius: 6,
+        background: COLORS.primary,
         boxShadow: `0 0 0 5px ${COLORS.accentSoft}`,
         display: "flex",
         alignItems: "center",
@@ -30,11 +30,12 @@ export default function TimelineItem({ children, isLast }) {
 
       {/* Card */}
       <div style={{
-        background: COLORS.bg,
+        background: COLORS.bgCard,
         border: `1px solid ${COLORS.border}`,
-        borderRadius: 20,
+        borderLeft: `3px solid ${COLORS.primary}`,
+        borderRadius: 12,
         padding: "28px 32px",
-        boxShadow: "0 4px 24px rgba(99,102,241,0.07)",
+        boxShadow: "0 4px 24px rgba(0,0,0,0.28)",
       }}>
         {children}
       </div>
@@ -53,7 +54,7 @@ export function Timeline({ children }) {
         top: 0,
         bottom: 0,
         width: 2,
-        background: `linear-gradient(to bottom, ${COLORS.gradA}, ${COLORS.gradB})`,
+        background: COLORS.border,
         borderRadius: 2,
       }} />
       {children}

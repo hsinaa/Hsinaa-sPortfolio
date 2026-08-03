@@ -2,7 +2,7 @@
 //  src/sections/Projects.jsx
 // ─────────────────────────────────────────────────────────────
 import { useState } from "react";
-import { COLORS, gradient } from "../styles/tokens.js";
+import { COLORS } from "../styles/tokens.js";
 import { SectionLabel, SectionTitle, Tag } from "../components/ui.jsx";
 import ProjectModal from "../components/ProjectModal.jsx";
 import { useLanguage } from "../i18n.jsx";
@@ -56,13 +56,13 @@ function ProjectCard({ project, index, onOpen, t }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: COLORS.bg,
-        borderRadius: 20,
-        border: `1px solid ${COLORS.border}`,
+        background: COLORS.bgCard,
+        borderRadius: 12,
+        border: `1px solid ${hovered ? COLORS.primary : COLORS.border}`,
         padding: "28px 28px 24px",
         display: "flex", flexDirection: "column",
         transition: "box-shadow 0.25s, transform 0.25s",
-        boxShadow: hovered ? "0 8px 36px rgba(99,102,241,0.16)" : "0 2px 12px rgba(99,102,241,0.06)",
+        boxShadow: hovered ? "0 8px 36px rgba(0,0,0,0.42)" : "0 2px 12px rgba(0,0,0,0.24)",
         transform: hovered ? "translateY(-3px)" : "none",
       }}
     >
@@ -70,8 +70,8 @@ function ProjectCard({ project, index, onOpen, t }) {
       <div style={{
         display: "inline-flex", alignItems: "center", justifyContent: "center",
         width: 36, height: 36, borderRadius: 10,
-        background: gradient,
-        color: "#fff", fontWeight: 800, fontSize: 13,
+        background: COLORS.primary,
+        color: COLORS.bg, fontWeight: 800, fontSize: 13,
         marginBottom: 18,
       }}>
         {String(index + 1).padStart(2, "0")}
@@ -96,7 +96,7 @@ function ProjectCard({ project, index, onOpen, t }) {
         style={{
           background: hovered ? COLORS.primary : "none",
           border: `1.5px solid ${COLORS.primary}`,
-          borderRadius: 999, padding: "8px 20px",
+          borderRadius: 7, padding: "8px 20px",
           fontSize: 13, fontWeight: 700,
           color: hovered ? "#fff" : COLORS.primary,
           cursor: "pointer", alignSelf: "flex-start",

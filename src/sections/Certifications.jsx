@@ -40,17 +40,17 @@ function CertCard({ cert, t }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         background: COLORS.bgSoft,
-        border: `1px solid ${COLORS.border}`,
-        borderRadius: 20,
+        border: `1px solid ${hovered ? COLORS.accent : COLORS.border}`,
+        borderRadius: 12,
         padding: "32px 28px",
         display: "flex", flexDirection: "column", alignItems: "flex-start",
         transition: "box-shadow 0.2s, transform 0.2s",
-        boxShadow: hovered ? "0 8px 32px rgba(99,102,241,0.14)" : "0 2px 12px rgba(99,102,241,0.05)",
+        boxShadow: hovered ? "0 8px 32px rgba(0,0,0,0.40)" : "0 2px 12px rgba(0,0,0,0.22)",
         transform: hovered ? "translateY(-3px)" : "none",
       }}
     >
       <div style={{
-        width: 52, height: 52, borderRadius: 14,
+        width: 52, height: 52, borderRadius: 10,
         background: COLORS.accentSoft,
         display: "flex", alignItems: "center", justifyContent: "center",
         fontSize: 24, marginBottom: 20,

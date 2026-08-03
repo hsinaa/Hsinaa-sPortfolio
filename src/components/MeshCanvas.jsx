@@ -8,7 +8,7 @@
 
 import { useEffect, useRef } from "react";
 
-const NODE_COUNT = 38;   // number of floating nodes
+const NODE_COUNT = 26;   // restrained background density
 const MAX_DIST   = 130;  // max px distance to draw an edge
 const SPEED      = 0.4;  // max velocity per axis
 
@@ -53,7 +53,7 @@ export default function MeshCanvas() {
           const d  = Math.sqrt(dx * dx + dy * dy);
           if (d < MAX_DIST) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(99,102,241,${(1 - d / MAX_DIST) * 0.25})`;
+            ctx.strokeStyle = `rgba(121,184,255,${(1 - d / MAX_DIST) * 0.14})`;
             ctx.lineWidth   = 0.8;
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -68,12 +68,12 @@ export default function MeshCanvas() {
         // core dot
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r * glow, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(124,58,237,0.55)";
+        ctx.fillStyle = "rgba(114,212,155,0.40)";
         ctx.fill();
         // soft halo
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r * glow * 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(199,210,254,0.12)";
+        ctx.fillStyle = "rgba(121,184,255,0.12)";
         ctx.fill();
       });
 

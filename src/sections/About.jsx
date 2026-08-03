@@ -42,8 +42,8 @@ export default function About() {
                 key={item.label}
                 style={{
                   display: "flex", gap: 16, alignItems: "flex-start",
-                  padding: "18px 20px", borderRadius: 16,
-                  background: COLORS.bgSoft,
+                  padding: "18px 20px", borderRadius: 10,
+                  background: COLORS.bgCard,
                   border: `1px solid ${COLORS.border}`,
                 }}
               >

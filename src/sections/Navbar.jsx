@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────
 
 import { useState, useEffect } from "react";
-import { COLORS } from "../styles/tokens.js";
+import { COLORS, FONTS } from "../styles/tokens.js";
 import { Button } from "../components/ui.jsx";
 import { useLanguage } from "../i18n.jsx";
 
@@ -26,10 +26,11 @@ export default function Navbar() {
   return (
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-      background: scrolled ? "rgba(255,255,255,0.92)" : "transparent",
+      background: scrolled ? "rgba(36,41,47,0.94)" : "transparent",
       backdropFilter: scrolled ? "blur(12px)" : "none",
       borderBottom: scrolled ? `1px solid ${COLORS.border}` : "none",
       transition: "all 0.3s",
+      fontFamily: FONTS.mono,
       padding: "0 clamp(16px,4vw,60px)",
     }}>
       {/* Main bar */}
@@ -84,7 +85,7 @@ export default function Navbar() {
       {/* Mobile drawer */}
       {open && (
         <div style={{
-          background: "rgba(255,255,255,0.97)",
+          background: "rgba(36,41,47,0.98)",
           backdropFilter: "blur(12px)",
           padding: "16px 24px 24px",
           display: "flex", flexDirection: "column", gap: 4,

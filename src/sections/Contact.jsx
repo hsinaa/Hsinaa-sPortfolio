@@ -17,7 +17,7 @@ const contactLinks = (c) => [
 ];
 
 const inputStyle = (focus, COLORS) => ({
-  width: "100%", padding: "12px 16px", borderRadius: 12,
+  width: "100%", padding: "12px 16px", borderRadius: 8,
   border: `1.5px solid ${focus ? COLORS.primary : COLORS.border}`,
   fontSize: 14, color: COLORS.text, background: COLORS.bgSoft,
   outline: "none", fontFamily: "inherit",
@@ -59,15 +59,15 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 style={{
                   display: "flex", alignItems: "center", gap: 14,
-                  padding: "16px 20px", borderRadius: 14,
-                  background: COLORS.bg,
+                  padding: "16px 20px", borderRadius: 10,
+                  background: COLORS.bgCard,
                   border: `1px solid ${COLORS.border}`,
                   textDecoration: "none",
-                  boxShadow: "0 2px 8px rgba(99,102,241,0.04)",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.22)",
                   transition: "box-shadow 0.2s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 6px 24px rgba(99,102,241,0.12)")}
-                onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 2px 8px rgba(99,102,241,0.04)")}
+                onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 6px 24px rgba(0,0,0,0.40)")}
+                onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.22)")}
               >
                 <span style={{ fontSize: 20 }}>{l.icon}</span>
                 <div>
@@ -87,9 +87,9 @@ export default function Contact() {
 
           {/* Right — contact form */}
           <div style={{
-            background: COLORS.bg, border: `1px solid ${COLORS.border}`,
-            borderRadius: 20, padding: "36px 32px",
-            boxShadow: "0 4px 24px rgba(99,102,241,0.07)",
+            background: COLORS.bgCard, border: `1px solid ${COLORS.border}`,
+            borderRadius: 12, padding: "36px 32px",
+            boxShadow: "0 4px 24px rgba(0,0,0,0.28)",
           }}>
             {sent ? (
               <div style={{ textAlign: "center", padding: "40px 0" }}>

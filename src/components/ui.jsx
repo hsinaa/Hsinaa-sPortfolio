@@ -5,17 +5,19 @@
 //  Edit styles here to change how tags, buttons, and labels look.
 // ─────────────────────────────────────────────────────────────
 
-import { COLORS, gradient } from "../styles/tokens.js";
+import { COLORS, FONTS, gradient } from "../styles/tokens.js";
 
 // ── Section eye-brow label ───────────────────────────────────
 export function SectionLabel({ children, light }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
       <span style={{
-        fontSize: 11, fontWeight: 700, letterSpacing: "0.16em",
+        fontSize: 11, fontWeight: 700, letterSpacing: "0.14em",
+        fontFamily: FONTS.mono,
         textTransform: "uppercase",
         color: light ? COLORS.accentLight : COLORS.accent,
       }}>
+        <span style={{ color: COLORS.primary, marginRight: 7 }}>$</span>
         {children}
       </span>
       <div style={{
@@ -47,9 +49,9 @@ export function Tag({ label, small }) {
     <span style={{
       display: "inline-block",
       padding: small ? "2px 10px" : "4px 12px",
-      borderRadius: 999,
+      borderRadius: 6,
       fontSize: small ? 11 : 12,
-      fontWeight: 600,
+      fontWeight: 600, fontFamily: FONTS.mono,
       background: COLORS.accentSoft,
       color: COLORS.accent,
       border: `1px solid ${COLORS.accentLight}`,
@@ -64,21 +66,21 @@ export function Button({ children, onClick, outline, href, small }) {
   const base = {
     display: "inline-flex", alignItems: "center", gap: 8,
     padding: small ? "8px 18px" : "11px 26px",
-    borderRadius: 999,
+    borderRadius: 8,
     fontWeight: 700,
     fontSize: small ? 13 : 14,
     cursor: "pointer",
     textDecoration: "none",
     transition: "all 0.2s",
     border: "none",
-    fontFamily: "inherit",
+    fontFamily: FONTS.mono,
   };
 
   const filled = {
     ...base,
     background: gradient,
     color: "#fff",
-    boxShadow: "0 4px 20px rgba(99,102,241,0.3)",
+    boxShadow: "0 4px 20px rgba(114,212,155,0.18)",
   };
 
   const outlined = {

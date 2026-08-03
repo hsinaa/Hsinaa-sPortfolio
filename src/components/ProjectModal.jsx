@@ -32,7 +32,7 @@ export default function ProjectModal({ project, index, onClose }) {
       onClick={onClose}
       style={{
         position: "fixed", inset: 0, zIndex: 200,
-        background: "rgba(30,27,75,0.55)",
+        background: "rgba(0,0,0,0.72)",
         backdropFilter: "blur(8px)",
         display: "flex", alignItems: "center", justifyContent: "center",
         padding: "24px clamp(16px,4vw,40px)",
@@ -43,12 +43,12 @@ export default function ProjectModal({ project, index, onClose }) {
         onClick={(e) => e.stopPropagation()}
         style={{
           background: COLORS.bg,
-          borderRadius: 24,
+          borderRadius: 14,
           maxWidth: 700,
           width: "100%",
           maxHeight: "88vh",
           overflowY: "auto",
-          boxShadow: "0 24px 80px rgba(99,102,241,0.22)",
+          boxShadow: "0 24px 80px rgba(0,0,0,0.55)",
           padding: "40px clamp(24px,4vw,48px)",
         }}
       >
@@ -56,7 +56,7 @@ export default function ProjectModal({ project, index, onClose }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
           <div style={{
             background: gradient,
-            borderRadius: 14, padding: "8px 16px",
+            borderRadius: 7, padding: "8px 16px",
             fontSize: 12, fontWeight: 700, color: "#fff", letterSpacing: "0.08em",
           }}>
             {t.project} {String(index + 1).padStart(2, "0")}

@@ -6,28 +6,29 @@
 // ─────────────────────────────────────────────────────────────
 
 export const COLORS = {
-  bg:           "#FFFFFF",
-  bgSoft:       "#F8F7FF",
-  bgCard:       "#FFFFFF",
+  bg:           "#0D1117",
+  bgSoft:       "#161B22",
+  bgCard:       "#24292F",
 
-  primary:      "#4F46E5",   // indigo-600  — main brand color
-  primaryLight: "#818CF8",   // indigo-400
-  accent:       "#7C3AED",   // violet-600
-  accentLight:  "#C4B5FD",   // violet-300
-  accentSoft:   "#EDE9FE",   // violet-100  — pill backgrounds
+  primary:      "#72D49B",
+  primaryLight: "#A0E8BD",
+  accent:       "#79B8FF",
+  accentLight:  "#3A6F9F",
+  accentSoft:   "#172B3D",
 
-  text:         "#1E1B4B",   // indigo-950  — headings
-  textMid:      "#4338CA",   // indigo-700  — sub-headings
-  textMuted:    "#6B7280",   // gray-500    — body / captions
+  text:         "#D6DBE1",
+  textMid:      "#B7C0CA",
+  textMuted:    "#8B949E",
 
-  border:       "#E0E7FF",
+  border:       "#3A4149",
 
-  gradA:        "#6366F1",   // gradient start (indigo)
-  gradB:        "#8B5CF6",   // gradient end   (violet)
+  gradA:        "#72D49B",
+  gradB:        "#79B8FF",
 };
 
 export const FONTS = {
-  family: "'Inter', system-ui, sans-serif",
+  family: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  mono: "'Liberation Mono', 'DejaVu Sans Mono', Consolas, monospace",
 };
 
 // Reusable CSS-in-JS style helpers
@@ -36,12 +37,12 @@ export const gradient = `linear-gradient(135deg, ${COLORS.gradA}, ${COLORS.gradB
 export const cardBase = {
   background: COLORS.bgCard,
   border:     `1px solid ${COLORS.border}`,
-  borderRadius: 20,
-  boxShadow:  "0 2px 12px rgba(99,102,241,0.06)",
+  borderRadius: 12,
+  boxShadow:  "0 2px 12px rgba(0,0,0,0.24)",
   transition: "box-shadow 0.25s, transform 0.25s",
 };
 
 export const cardHover = {
-  boxShadow: "0 8px 36px rgba(99,102,241,0.16)",
+  boxShadow: "0 8px 36px rgba(0,0,0,0.38)",
   transform: "translateY(-3px)",
 };

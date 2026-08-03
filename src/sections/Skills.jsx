@@ -13,14 +13,14 @@ export default function Skills() {
       id="skills"
       style={{
         padding: "96px clamp(20px,5vw,80px)",
-        background: "linear-gradient(160deg, #1E1B4B 0%, #312E81 60%, #4C1D95 100%)",
+        background: "linear-gradient(160deg, #0D1117 0%, #161B22 60%, #24292F 100%)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <SectionLabel light>{t.skillsLabel}</SectionLabel>
         <SectionTitle light>{t.skillsTitle}</SectionTitle>
         <p style={{
-          color: "rgba(255,255,255,0.55)", fontSize: 15,
+          color: COLORS.textMuted, fontSize: 15,
           marginTop: 12, marginBottom: 52, lineHeight: 1.7,
         }}>
           {t.skillsIntro}
@@ -35,9 +35,9 @@ export default function Skills() {
             <div
               key={group.id}
               style={{
-                background: "rgba(255,255,255,0.07)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                borderRadius: 20,
+                background: COLORS.bgCard,
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: 12,
                 padding: "28px 24px",
                 backdropFilter: "blur(8px)",
               }}
@@ -53,11 +53,11 @@ export default function Skills() {
                     style={{
                       display: "inline-block",
                       padding: "5px 13px",
-                      borderRadius: 999,
+                      borderRadius: 6,
                       fontSize: 12, fontWeight: 600,
-                      background: "rgba(199,210,254,0.12)",
-                      border: "1px solid rgba(199,210,254,0.22)",
-                      color: "rgba(255,255,255,0.85)",
+                      background: "rgba(114,212,155,0.08)",
+                      border: "1px solid rgba(114,212,155,0.25)",
+                      color: COLORS.primaryLight,
                     }}
                   >
                     {skill}

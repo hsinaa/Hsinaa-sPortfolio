@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { FONTS } from "./styles/tokens.js";
+import { COLORS, FONTS } from "./styles/tokens.js";
 import App from "./App.jsx";
 import { LanguageProvider } from "./i18n.jsx";
 
@@ -9,7 +9,10 @@ const globalStyle = document.createElement("style");
 globalStyle.textContent = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: ${FONTS.family}; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  body { font-family: ${FONTS.family}; background: ${COLORS.bg}; color: ${COLORS.text}; -webkit-font-smoothing: antialiased; }
+  button, input, textarea { font: inherit; }
+  a { color: inherit; }
+  ::selection { background: ${COLORS.primary}; color: ${COLORS.bg}; }
 `;
 document.head.appendChild(globalStyle);
 
