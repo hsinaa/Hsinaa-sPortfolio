@@ -26,7 +26,6 @@ export const skillGroups = [
       "Kubernetes",
       "Docker / Docker Compose",
       "Helm",
-      "Kata Containers (VM-grade isolation)",
     ],
   },
   {
@@ -36,7 +35,6 @@ export const skillGroups = [
     skills: [
       "Jenkins (CI/CD pipelines)",
       "ArgoCD (GitOps, continuous reconciliation)",
-      "Kolla Ansible (OpenStack deployment via Docker)",
       "GitHub (code integration & deployment)",
     ],
   },
@@ -46,8 +44,8 @@ export const skillGroups = [
     label:  "Security (DevSecOps / Cybersecurity)",
     skills: [
       "SonarQube, Trivy, OWASP ZAP, GitLeaks (pipeline security)",
-      "Falco (Kubernetes runtime detection)",
-      "Honeypots (Cowrie, AWS self-healing)",
+      "Falco",
+      "Honeypots (Cowrie)",
     ],
   },
   {
@@ -55,7 +53,6 @@ export const skillGroups = [
     icon:   "🕵️",
     label:  "SOC / SIEM / Threat Intel",
     skills: [
-      "Splunk",
       "Kibana / ElasticSearch",
       "TheHive, Cortex, MISP (incident handling, threat intel enrichment)",
       "Wazuh",
@@ -91,6 +88,18 @@ export const skillGroups = [
       "Networks Fundamentals",
     ],
   },
+  {
+  id:     "grc",
+  icon:   "📋",
+  label:  "GRC (Governance, Risk & Compliance)",
+  skills: [
+    "EBIOS Risk Manager",
+    "ISO/IEC 27001",
+    "PCA/PRA",
+    "Analyse et gestion des risques SI",
+    "Politiques de sécurité & plans de traitement des risques",
+  ],
+},
   // ── To add a category ──
   // {
   //   id:     "your-category",

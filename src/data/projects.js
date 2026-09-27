@@ -41,6 +41,85 @@ export const projects = [
   //   diagramUrl: null, // or "/diagrams/your-diagram.png"
   // },
   {
+  title: "ISMS Design and Implementation for a Cloud-Native DevSecOps Environment",
+
+  short:
+    "ISO/IEC 27001:2022-aligned Information Security Management System for securing a cloud-native DevSecOps platform.",
+
+  tools: [
+    "ISO/IEC 27001:2022",
+    "ISMS",
+    "Risk Assessment",
+    "DevSecOps",
+  ],
+
+  full: [
+    "Designed an Information Security Management System (ISMS) aligned with ISO/IEC 27001:2022 for a cloud-native DevSecOps environment.",
+    "Defined the ISMS scope covering the CI/CD, GitOps, containerization, Kubernetes, infrastructure-as-code, monitoring, and security tooling ecosystem.",
+    "Identified and classified information, software, infrastructure, configuration, and human assets according to confidentiality, integrity, and availability requirements.",
+    "Conducted a structured risk assessment covering threats, vulnerabilities, risk scenarios, impacts, probabilities, and treatment strategies.",
+    "Developed a risk treatment plan with security controls including MFA, RBAC, secrets management, branch protection, vulnerability scanning, network policies, logging, monitoring, backup, and recovery.",
+    "Defined residual-risk objectives and evidence required to demonstrate the effectiveness of implemented security controls."
+  ],
+
+  challenges: [
+    "Defining an appropriate ISMS scope across a complex DevSecOps toolchain.",
+    "Mapping business and technical assets to concrete information security risks.",
+    "Managing security risks across CI/CD, GitOps, containers, and Kubernetes.",
+    "Selecting appropriate security controls while maintaining the agility of the DevSecOps lifecycle.",
+    "Defining measurable evidence to verify that security controls are effectively implemented."
+  ],
+
+  results: [
+    "Structured ISMS framework for a cloud-native DevSecOps environment.",
+    "Complete asset inventory and cybersecurity risk register.",
+    "Identification and prioritization of 20 security risk scenarios.",
+    "Risk treatment plan covering preventive, detective, and recovery controls.",
+    "Defined transition from inherent risk to targeted residual risk.",
+    "Security governance approach supporting continuous monitoring and improvement."
+  ],
+
+  diagramUrl: "/diagrams/CloudNative-ISMS.png",
+},
+  {
+  title: "Cyber Risk Assessment of a Cloud Datacenter — EBIOS RM",
+
+  short:
+    "Cybersecurity risk assessment of a fictitious cloud datacenter using the EBIOS Risk Manager methodology.",
+
+  tools: [
+    "EBIOS Risk Manager",
+    "Risk Assessment",
+    "Threat Modeling",
+    "Risk Analysis",
+  ],
+
+  full: [
+    "Conducted a cybersecurity risk assessment of a fictitious cloud datacenter using the EBIOS Risk Manager methodology.",
+    "Identified business values, supporting assets, feared events, risk sources, and attacker objectives.",
+    "Designed strategic and operational attack scenarios targeting virtualized infrastructure, administrative accounts, databases, and client data.",
+    "Evaluated cybersecurity risks and identified security measures to reduce exposure and limit attack impact.",
+    "Developed a risk treatment plan covering MFA, PAM, network segmentation, patch management, immutable backups, and security monitoring."
+  ],
+
+  challenges: [
+    "Translating business objectives into concrete cybersecurity risks.",
+    "Mapping dependencies between business values and technical infrastructure.",
+    "Building realistic attack scenarios from external and internal threat sources.",
+    "Defining appropriate security controls and evaluating residual risks."
+  ],
+
+  results: [
+    "Complete EBIOS RM-based risk assessment for a cloud datacenter.",
+    "Structured mapping between business assets, threats, attack scenarios, and security controls.",
+    "Identification of critical attack paths affecting cloud infrastructure and client data.",
+    "Risk treatment plan covering preventive, detective, and recovery measures.",
+    "Defined residual-risk assessment after implementation of security measures."
+  ],
+
+  diagramUrl: "/diagrams/AtlasCloud-EBIOS.png",
+},
+  {
     title: "Cloud-Native Microservices Platform for Sports Events",
 
     short:
