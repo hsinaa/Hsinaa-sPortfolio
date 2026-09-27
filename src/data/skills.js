@@ -33,9 +33,9 @@ export const skillGroups = [
     icon:   "🔁",
     label:  "DevOps / GitOps / CI-CD",
     skills: [
-      "Jenkins (CI/CD pipelines)",
-      "ArgoCD (GitOps, continuous reconciliation)",
-      "GitHub (code integration & deployment)",
+      "Jenkins",
+      "ArgoCD",
+      "GitHub",
     ],
   },
   {
@@ -43,7 +43,7 @@ export const skillGroups = [
     icon:   "🔐",
     label:  "Security (DevSecOps / Cybersecurity)",
     skills: [
-      "SonarQube, Trivy, OWASP ZAP, GitLeaks (pipeline security)",
+      "SonarQube, Trivy, OWASP ZAP, GitLeaks",
       "Falco",
       "Honeypots (Cowrie)",
     ],
@@ -54,7 +54,7 @@ export const skillGroups = [
     label:  "SOC / SIEM / Threat Intel",
     skills: [
       "Kibana / ElasticSearch",
-      "TheHive, Cortex, MISP (incident handling, threat intel enrichment)",
+      "TheHive, Cortex, MISP",
       "Wazuh",
     ],
   },
@@ -66,7 +66,7 @@ export const skillGroups = [
       "Prometheus",
       "Grafana",
       "Loki",
-      "ELK Stack (ElasticSearch, Logstash, Kibana)",
+      "ELK Stack",
     ],
   },
   {
@@ -74,8 +74,8 @@ export const skillGroups = [
     icon:   "💻",
     label:  "Development / Scripting",
     skills: [
-      "Python (boto3, automation, pipelines)",
-      "Bash (scripting, modular toolkits)",
+      "Python",
+      "Bash/Shell scripting",
     ],
   },
   {
@@ -96,8 +96,6 @@ export const skillGroups = [
     "EBIOS Risk Manager",
     "ISO/IEC 27001",
     "PCA/PRA",
-    "Analyse et gestion des risques SI",
-    "Politiques de sécurité & plans de traitement des risques",
   ],
 },
   // ── To add a category ──
