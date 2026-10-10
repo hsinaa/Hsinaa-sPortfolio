@@ -26,7 +26,7 @@ export const certifications = [
   },
   {
     id:   3,
-    icon: "🔐",
+    icon: "🎯",
     title: "Introduction à la méthode EBIOS Risk Manager",
     subtitle: "EBIOS RM",
     org:  "Club EBIOS",
@@ -51,8 +51,24 @@ export const certifications = [
     image: "/certifications/awssolutionarchitectfundamentals.jpeg",
     url:  null,
   },
-
-
+        {
+    id:   6,
+    icon: "🔐",
+    title: "Fortinet NSE 1 Certified in Cybersecurity",
+    subtitle: "Fortinet NSE 1 Certified in Cybersecurity",
+    org:  "Fortinet",
+    image: null,
+    url:  "https://www.credly.com/earner/earned/badge/de732357-c4b0-484d-9959-25527b4d3262" ,
+  },
+        {
+    id:   7,
+    icon: "🔐",
+    title: "Fortinet NSE 2 Certified in Cybersecurity",
+    subtitle: "Fortinet NSE 2 Certified in Cybersecurity",
+    org:  "Fortinet",
+    image: null,
+    url:  "https://www.credly.com/earner/earned/badge/de8ee31f-89bc-4d43-8530-da3d974ee804" ,
+  },
 
   // ── To add a certification ──
   // {
