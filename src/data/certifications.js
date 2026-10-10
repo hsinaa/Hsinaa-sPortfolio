@@ -35,7 +35,7 @@ export const certifications = [
   },
     {
     id:   4,
-    icon: "🏅",
+    icon: "☁️",
     title: "GitOps for Amazon EKS Automation",
     subtitle: "GitOps for Amazon EKS Automation",
     org:  "Amazon Web Services (AWS)",
